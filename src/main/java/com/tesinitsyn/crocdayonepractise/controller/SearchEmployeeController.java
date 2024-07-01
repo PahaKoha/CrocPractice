@@ -2,6 +2,8 @@ package com.tesinitsyn.crocdayonepractise.controller;
 
 import com.tesinitsyn.crocdayonepractise.entity.Employee;
 import com.tesinitsyn.crocdayonepractise.repository.EmployeeRepository;
+import com.tesinitsyn.crocdayonepractise.utils.EmployeeMapper;
+import com.tesinitsyn.crocdayonepractise.utils.EmployeeMapperImpl;
 import com.tesinitsyn.crocdayonepractise.utils.SearchQueryProcessor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,9 +21,13 @@ public class SearchEmployeeController {
 
     private final EmployeeRepository employeeRepository;
 
-    public SearchEmployeeController(SearchQueryProcessor queryProcessor, EmployeeRepository employeeRepository) {
+    private final EmployeeMapper employeeMapper;
+
+
+    public SearchEmployeeController(SearchQueryProcessor queryProcessor, EmployeeRepository employeeRepository, EmployeeMapper employeeMapper) {
         this.queryProcessor = queryProcessor;
         this.employeeRepository = employeeRepository;
+        this.employeeMapper = new EmployeeMapperImpl();
     }
 
     @GetMapping
