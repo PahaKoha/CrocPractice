@@ -43,7 +43,7 @@ public class SearchEmployeeController {
         this.employeeMapper = new EmployeeMapperImpl();
     }
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<EmployeeDto> search(@RequestParam(value = "search", required = false) String search) {
         var employee = (Employee) null;
         if (search != null) {
