@@ -3,7 +3,6 @@ package com.tesinitsyn.crocdayonepractise.controller;
 import com.tesinitsyn.crocdayonepractise.entity.Employee;
 import com.tesinitsyn.crocdayonepractise.repository.EmployeeRepository;
 import com.tesinitsyn.crocdayonepractise.utils.SearchQueryProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
