@@ -5,11 +5,14 @@ import com.querydsl.core.types.dsl.Expressions;
 import com.tesinitsyn.crocdayonepractise.entity.Employee;
 import com.tesinitsyn.crocdayonepractise.entity.SearchCriteria;
 import com.tesinitsyn.crocdayonepractise.entity.SearchOperation;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
+@Component
 public class SearchQueryProcessor {
 
     private static final String FULL_NAME_PATTERN = "(^[А-Яа-я]{3,16})([ ]{0,1})([А-Яа-я]{3,16})?([ ]{0,1})?([А-Яа-я]{3,16})?([ ]{0,1})?([А-Яа-я]{3,16})";
