@@ -3,6 +3,7 @@ package com.tesinitsyn.crocdayonepractise.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.FieldNameConstants;
 import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
@@ -11,7 +12,10 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
+@FieldNameConstants
 public class Employee {
+
+    public static final String FULL_NAME_FIELD = "fullName";
 
     /**
      * Идентификатор.
