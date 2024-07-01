@@ -14,7 +14,7 @@ services:
   #    - '8080:8080'
   database:
     image: 'postgres:latest'
-    container_name: 'PostgresDB'
+    container_name: 'NewPostgresDB'
     environment:
       - 'POSTGRES_DB=db'
       - 'POSTGRES_PASSWORD=secret'

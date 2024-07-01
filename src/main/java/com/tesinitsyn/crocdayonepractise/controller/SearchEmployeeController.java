@@ -6,6 +6,7 @@ import com.tesinitsyn.crocdayonepractise.repository.EmployeeRepository;
 import com.tesinitsyn.crocdayonepractise.utils.EmployeeMapper;
 import com.tesinitsyn.crocdayonepractise.utils.EmployeeMapperImpl;
 import com.tesinitsyn.crocdayonepractise.utils.SearchQueryProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +32,12 @@ public class SearchEmployeeController {
      * 2. Maven package
      * 3. Maven clean
      * and retry in every order if you can't import it :)
+     *
+     *
+     * TODO: find @annotation for employeeMapper to delete @Autowired
      */
-    public SearchEmployeeController(SearchQueryProcessor queryProcessor, EmployeeRepository employeeRepository, EmployeeMapper employeeMapper) {
+    @Autowired
+    public SearchEmployeeController(SearchQueryProcessor queryProcessor, EmployeeRepository employeeRepository) {
         this.queryProcessor = queryProcessor;
         this.employeeRepository = employeeRepository;
         this.employeeMapper = new EmployeeMapperImpl();
