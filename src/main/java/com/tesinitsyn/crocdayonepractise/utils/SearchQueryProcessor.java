@@ -41,7 +41,7 @@ public class SearchQueryProcessor {
                                             str.toLowerCase()));
                             criteriaList.add(
                                     new SearchCriteria(
-                                            Employee.Fields.firstName,
+                                            Employee.Fields.patronymic,
                                             SearchOperation.CONTAINS.getOperation(),
                                             str.toLowerCase()));
                         });
