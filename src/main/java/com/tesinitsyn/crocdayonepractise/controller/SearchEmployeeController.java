@@ -32,8 +32,8 @@ public class SearchEmployeeController {
      * 2. Maven package
      * 3. Maven clean
      * and retry in every order if you can't import it :)
-     *
-     *
+     * <p>
+     * <p>
      * TODO: find @annotation for employeeMapper to delete @Autowired
      */
     @Autowired
@@ -43,6 +43,13 @@ public class SearchEmployeeController {
         this.employeeMapper = new EmployeeMapperImpl();
     }
 
+    /**
+     * to perform search:
+     * use bruno or postman and send this: http://localhost:8080/employee?search=john.doe@example.com
+     *
+     * @param search
+     * @return
+     */
     @GetMapping()
     public ResponseEntity<EmployeeDto> search(@RequestParam(value = "search", required = false) String search) {
         var employee = (Employee) null;
